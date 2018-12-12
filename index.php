@@ -32,7 +32,7 @@
 	  */
 	
 	$select = "SELECT * FROM COMPANY";
-	 $ret = pg_query($db_connection, $sql);
+	 $ret = pg_query($db_connection, $select);
 	   if(!$ret) {
 		  echo pg_last_error($db_connection);
 		  exit;
