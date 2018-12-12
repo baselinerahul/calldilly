@@ -3,15 +3,31 @@
  dbname=dfkcsq047ej0lu user=fzxqjsjlxieohl password=fbdfcaa97415b4062f460a6f3abda63d4bd1565766cdf382d536c4e66a67cf27");
      if($db_connection) {
        echo 'connected';
+	   $create="CREATE TABLE IF NOT EXISTS userss (
+        id INT PRIMARY KEY NOT NULL, 
+        username CHAR(30), 
+        email TEXT, 
+        phone CHAR(30), 
+        password CHAR(30)
+        )";
+
+// Execute query
+    if (pg_query($db_connection,$create))  {
+        echo "Table users created successfully. ";
+    }
+    else  {
+        echo "Error creating table. ";
+    }
+	
+	   
+	   
+	   
     } else {
         echo 'there has been an error connecting';
     }
 
 
-$insert = "INSERT INTO users (email, phone, otp)
-VALUES ('test@gmail.com', '9806578867', 99)";
-echo  $result1 = pg_query($db_connection, $insert);	
-	
+ 
 	
 ?>
 
