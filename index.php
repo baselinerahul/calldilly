@@ -12,7 +12,7 @@
 			)";
 
 	 
-		if (pg_query($db_connection,$create))  {
+		//if (pg_query($db_connection,$create))  {
 			echo "Table users created successfully. ";
 			$insert = "INSERT INTO USERS (USERNAME,EMAIL,PASSWORD,PHONE,OTP) VALUES ('test', 'test@gmail.com', 'welcome123', '9755778678','fghgh');
 ";
@@ -22,13 +22,14 @@
 				}
 				else {
 				    echo "Data entry unsuccessful. ";
+					echo pg_last_error($db_connection);
 				}
 	
-		}
-		else  {
+		/*}
+		 else  {
 			echo "Error creating table. ";
 			  echo pg_last_error($db_connection);
-		}
+		} */
 	
 	
 	
