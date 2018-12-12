@@ -18,7 +18,7 @@
 			echo "Error creating table. ";
 		}
 	
-	 $insert = "INSERT INTO users (username, email, phone, password) VALUE (test, 'test@gmail.com', 96768789, 'gfhvbgvhg')";
+	$insert = "INSERT INTO users (`username`, `email`, `phone`, `password`) VALUE (test, 'test@gmail.com', 96768789, 'gfhvbgvhg')";
         # Execute query
         if (pg_query($db_connection,$insert)) {
             echo "Data entered successfully. ";
