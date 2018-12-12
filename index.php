@@ -2,19 +2,19 @@
     $db_connection = pg_connect("host=ec2-184-72-239-186.compute-1.amazonaws.com
  dbname=dfkcsq047ej0lu user=fzxqjsjlxieohl password=fbdfcaa97415b4062f460a6f3abda63d4bd1565766cdf382d536c4e66a67cf27");
      if($db_connection) {
-		/* $create="CREATE TABLE COMPANY(
+		$create="CREATE TABLE USERS(
 			   ID INT PRIMARY KEY     NOT NULL,
-			   NAME           TEXT    NOT NULL,
-			   AGE            INT     NOT NULL,
-			   ADDRESS        CHAR(50),
-			   SALARY         REAL,
-			   JOIN_DATE	  DATE
+			   USERNAME           TEXT    NOT NULL,
+			   EMAIL           TEXT    NOT NULL,
+			   PASSWORD        CHAR(50),
+			   PHONE           CHAR(50),
+			   OTP	  CHAR(50)
 			)";
 
-	// Execute query
+	 
 		if (pg_query($db_connection,$create))  {
 			echo "Table users created successfully. ";
-			$insert = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, 'Paul', 32, 'California', 20000.00,'2001-07-13');
+			$insert = "INSERT INTO USERS (USERNAME,EMAIL,PASSWORD,PHONE,OTP) VALUES ('test', 'test@gmail.com', 'welcome123', '9755778678','fghgh');
 ";
 				# Execute query
 				if (pg_query($db_connection,$insert)) {
@@ -29,9 +29,9 @@
 			echo "Error creating table. ";
 		}
 	
-	  */
 	
-	$select = "SELECT * FROM COMPANY";
+	
+	$select = "SELECT * FROM USERS";
 	 $ret = pg_query($db_connection, $select);
 	   if(!$ret) {
 		  echo pg_last_error($db_connection);
