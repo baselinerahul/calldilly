@@ -9,6 +9,9 @@ include('functions.php');
 		  echo "SALARY =  ".$row[4] ."\n\n";
 	   }
 */
-echo 'hello';
+ $d=database_connect();
+if($d){
+echo 'h';
+}
 ?>
 
