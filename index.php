@@ -6,4 +6,11 @@
     } else {
         echo 'there has been an error connecting';
     }
+ $result = pg_query($db_connection, "SELECT * FROM users");	
+	$data=pg_fetch_assoc($result);
+	echo "<pre>";
+	print_r($data);
+	echo "</pre>";
+	
 ?>
+
