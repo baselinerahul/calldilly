@@ -13,20 +13,21 @@
 	// Execute query
 		if (pg_query($db_connection,$create))  {
 			echo "Table users created successfully. ";
+			$insert = "INSERT INTO users (username, email, phone, password) VALUES ('test', 'test@gmail.com', 96768789, 'gfhvbgvhg')";
+				# Execute query
+				if (pg_query($db_connection,$insert)) {
+				    echo "Data entered successfully. ";
+				}
+				else {
+				    echo "Data entry unsuccessful. ";
+				}
+	
 		}
 		else  {
 			echo "Error creating table. ";
 		}
 	
-	 $insert = "INSERT INTO users (username, email, phone, password) VALUES (test, 'test@gmail.com', 96768789, 'gfhvbgvhg')";
-        # Execute query
-        if (pg_query($db_connection,$insert)) {
-            echo "Data entered successfully. ";
-        }
-        else {
-            echo "Data entry unsuccessful. ";
-        }
-	
+	 
 	
 	
 	
