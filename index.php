@@ -6,8 +6,14 @@
     } else {
         echo 'there has been an error connecting';
     }
- $result = pg_query($db_connection, "SELECT * FROM users");	
-	$data=pg_fetch_assoc($result);
+
+$query = "INSERT INTO users VALUES ('','test','t')";
+$result = pg_query($db_connection,$query);	
+
+
+
+ $result1 = pg_query($db_connection, "SELECT * FROM users");	
+	$data=pg_fetch_assoc($result1);
 	echo "<pre>";
 	print_r($data);
 	echo "</pre>";
