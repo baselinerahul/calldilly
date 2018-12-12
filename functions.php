@@ -7,7 +7,7 @@
 	}
 	function user_registeration($data){
 		$db_connection=database_connect();
-	$insert = "INSERT INTO USERS (ID,USERNAME,EMAIL,PASSWORD,PHONE,OTP) VALUES ('".$data['id']."','".$data['username']."', '".$data['email']."', '".$data['password']."', '".$data['phone']."','".$data['otp']."')";
+	$insert = "INSERT INTO USERS (ID,USERNAME,EMAIL,PASSWORD,PHONE,OTP) VALUES (DEFAULT,'".$data['username']."', '".$data['email']."', '".$data['password']."', '".$data['phone']."','".$data['otp']."')";
 		# Execute query
 		if (pg_query($db_connection,$insert)) {
 			echo "Data entered successfully. ";
