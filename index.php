@@ -27,6 +27,7 @@
 		}
 		else  {
 			echo "Error creating table. ";
+			  echo pg_last_error($db_connection);
 		}
 	
 	
