@@ -7,18 +7,11 @@
         echo 'there has been an error connecting';
     }
 
-$query = "select * from information_schema.tables";
-$result = pg_query($db_connection,$query);	
 
-echo "<pre>";
-	print_r($result);
-	echo "</pre>";
-
- $result1 = pg_query($db_connection, "SELECT * FROM users");	
-	$data=pg_fetch_assoc($result1);
-	echo "<pre>";
-	print_r($data);
-	echo "</pre>";
+$insert = "INSERT INTO users (email, phone, otp)
+VALUES ('test@gmail.com', '9806578867', 99)";
+echo  $result1 = pg_query($db_connection, $insert);	
+	
 	
 ?>
 
