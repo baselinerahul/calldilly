@@ -14,7 +14,7 @@
 	 
 		//if (pg_query($db_connection,$create))  {
 			echo "Table users created successfully. ";
-			$insert = "INSERT INTO USERS (USERNAME,EMAIL,PASSWORD,PHONE) VALUES ('test', 'test@gmail.com', 'welcome123', '9755778678');
+			$insert = "INSERT INTO USERS (ID,USERNAME,EMAIL,PASSWORD,PHONE) VALUES ('1','test', 'test@gmail.com', 'welcome123', '9755778678');
 ";
 				# Execute query
 				if (pg_query($db_connection,$insert)) {
