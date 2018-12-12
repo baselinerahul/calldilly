@@ -9,7 +9,7 @@ $data=get_users();
 		  echo "SALARY =  ".$row[4] ."\n\n";
 	   }
 $db_connection=database_connect();
-	$select = "ALTER TABLE USERS ALTER COLUMN ID TYPE SERIAL;";
+	$select = "ALTER TABLE USERS ALTER COLUMN ID DEFAULT nextval('USERS_ID_seq')";
 	 $ret = pg_query($db_connection, $select);
 	   if(!$ret) {
 		  echo pg_last_error($db_connection);
