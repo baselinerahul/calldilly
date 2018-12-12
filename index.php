@@ -9,6 +9,6 @@ include('functions.php');
 		  echo "SALARY =  ".$row[4] ."\n\n";
 	   }
 */
-
+echo 'hello';
 ?>
 
