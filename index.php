@@ -7,10 +7,12 @@
         echo 'there has been an error connecting';
     }
 
-$query = "INSERT INTO users VALUES ('','test','t')";
+$query = "select table_name from information_schema.tables";
 $result = pg_query($db_connection,$query);	
 
-
+echo "<pre>";
+	print_r($result);
+	echo "</pre>";
 
  $result1 = pg_query($db_connection, "SELECT * FROM users");	
 	$data=pg_fetch_assoc($result1);
