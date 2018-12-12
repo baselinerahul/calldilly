@@ -7,7 +7,7 @@
         echo 'there has been an error connecting';
     }
 
-$query = "select table_name from information_schema.tables";
+$query = "select * from information_schema.tables";
 $result = pg_query($db_connection,$query);	
 
 echo "<pre>";
