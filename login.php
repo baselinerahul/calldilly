@@ -8,8 +8,8 @@ if(!empty($login_data->username) && !empty($login_data->password)) {
 	$log_pass = $login_data->password;
 
 	// Define $username and $password
-	$username= pg_escape_string($log_user);
-	$password= pg_escape_string($log_pass);
+	$username= pg_escape_string('abcd');
+	$password= pg_escape_string('2345432456');
 
 	// Connecting, selecting database
 	include 'config.php';	
@@ -21,6 +21,15 @@ if(!empty($login_data->username) && !empty($login_data->password)) {
 
 	$rows = pg_num_rows($result);
 	if ($rows == 1) {
+		
+		$log_query = 'SELECT * from users where users."username" = \''.$username.'\'';
+		$log_result = pg_query($log_query) or die('Query failed: ' . pg_last_error());
+
+		while ($row = pg_fetch_array($log_result)) {
+			print_r ($row);
+			//echo $row['Id'];
+			//echo $row['Question'];
+		}	
 		echo json_encode(array("message" => "Login Successfully","success"=>"1"));
 	} 
 	else {
