@@ -27,14 +27,14 @@
 
 		while ($row = pg_fetch_array($log_result)) {
 			//print_r ($row);
-			echo $row['username'];
-			echo $row['email'];
-			echo $row['phone'];
-			echo $row['password'];
-			echo $row['otp'];
-			echo $row['Id'];
+			$u_username = $row['username'];
+			$u_email = $row['email'];
+			$u_phone = $row['phone'];
+			$u_pass = $row['password'];
+			$u_otp = $row['otp'];
+			$u_id = $row['Id'];
 		}	
-		echo json_encode(array("message" => "Login Successfully","success"=>"1","username"=>"$row['username']","email"=>"$row['email']","phone"=>"$row['phone']","password"=>"$row['password']","otp"=>"$row['otp']","Id"=>"$row['Id']"));
+		echo json_encode(array("message" => "Login Successfully","success"=>"1","username"=>"'.$u_username.'","email"=>"'.$u_email.'","phone"=>"'.$u_phone.'","password"=>"'.$u_pass.'","otp"=>"'.$u_otp.'","Id"=>"'.$u_id.'"));
 	} 
 	else {
 		$error = "Username or Password is invalid";
