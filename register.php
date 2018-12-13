@@ -5,10 +5,10 @@ $arr_data = json_decode(file_get_contents("php://input"));
 
 	if(!empty($arr_data->username) && !empty($arr_data->email) && !empty($arr_data->phone) && !empty($arr_data->password)) {
 		
-				$u_user = $data->username;
-				$u_email = $data->email;
-				$u_phone = $data->phone;
-				$u_pass = $data->password;
+				$u_user = $arr_data->username;
+				$u_email = $arr_data->email;
+				$u_phone = $arr_data->phone;
+				$u_pass = $arr_data->password;
 	
 				// Define $username and $password
 				$new_username= pg_escape_string($u_user);
