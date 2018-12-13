@@ -5,19 +5,19 @@
 		return $db_connection;
 	} */
 	
-	function user_registeration($data){
+/* 	function user_registeration($data){
 		
-/* 	$db_connection=database_connect();
-	$insert = "INSERT INTO USERS (ID,USERNAME,EMAIL,PASSWORD,PHONE,OTP) VALUES (DEFAULT,'".$data['username']."', '".$data['email']."', '".$data['password']."', '".$data['phone']."','".$data['otp']."')";
-		# Execute query
-		if (pg_query($db_connection,$insert)) {
-			echo "Data entered successfully. ";
-		}
-		else {
-			echo "Data entry unsuccessful. ";
-			echo pg_last_error($db_connection);
-		} */
-		
+	if(
+		!empty($arr_data->username) &&
+		!empty($arr_data->email) &&
+		!empty($arr_data->phone) &&
+		!empty($arr_data->password)
+	){
+			$u_user = $data->username;
+			$u_email = $data->email;
+			$u_phone = $data->phone;
+			$u_pass = $data->password;
+	}	
 		// Define $username and $password
 		$new_username= pg_escape_string('abcd');
 		$new_email= pg_escape_string('abcd@mail.com');
@@ -56,7 +56,7 @@
 		
 		// Closing connection
 		pg_close($connection);		
-	}
+	} */
 	
 	function get_users(){
 		$db_connection=database_connect();
@@ -71,14 +71,5 @@
 	   
 
 	}
-	
-	
-	   
-	   
-	
-
-
- 
-	
 ?>
 
