@@ -1,8 +1,8 @@
 <?php
 
-$login_data = json_decode(file_get_contents("php://input"));
+//$login_data = json_decode(file_get_contents("php://input"));
 
-if(!empty($login_data->username) && !empty($login_data->password)) {
+//if(!empty($login_data->username) && !empty($login_data->password)) {
 	
 	$log_user = $login_data->username;
 	$log_pass = $login_data->password;
@@ -41,14 +41,14 @@ if(!empty($login_data->username) && !empty($login_data->password)) {
 
 	// Closing connection
 	pg_close($connection);
-		}	
+//		}	
 // tell the user data is incomplete			
-else{
+/* else{
  
     // set response code - 400 bad request
     http_response_code(400);
  
     // tell the user
     echo json_encode(array("message" => "Unable to Process Request. Data is incomplete."));
-}	
+} */	
 ?>
