@@ -34,7 +34,7 @@
 			$u_otp = $row['otp'];
 			$u_id = $row['Id'];
 		}	
-		echo json_encode(array("message" => "Login Successfully","success"=>"1","username"=>"'.$u_username.'","email"=>"'.$u_email.'","phone"=>"'.$u_phone.'","password"=>"'.$u_pass.'","otp"=>"'.$u_otp.'","Id"=>"'.$u_id.'"));
+		echo json_encode(array("message" => "Login Successfully","success"=>"1","username"=>"$u_username","email"=>"$u_email","phone"=>"$u_phone","password"=>"$u_pass","otp"=>"$u_otp","Id"=>"$u_id"));
 	} 
 	else {
 		$error = "Username or Password is invalid";
