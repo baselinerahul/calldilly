@@ -26,11 +26,15 @@
 		$log_result = pg_query($log_query) or die('Query failed: ' . pg_last_error());
 
 		while ($row = pg_fetch_array($log_result)) {
-			print_r ($row);
-			//echo $row['Id'];
-			//echo $row['Question'];
+			//print_r ($row);
+			echo $row['username'];
+			echo $row['email'];
+			echo $row['phone'];
+			echo $row['password'];
+			echo $row['otp'];
+			echo $row['Id'];
 		}	
-		echo json_encode(array("message" => "Login Successfully","success"=>"1"));
+		echo json_encode(array("message" => "Login Successfully","success"=>"1","username"=>"$row['username']","email"=>"$row['email']","phone"=>"$row['phone']","password"=>"$row['password']","otp"=>"$row['otp']","Id"=>"$row['Id']"));
 	} 
 	else {
 		$error = "Username or Password is invalid";
