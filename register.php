@@ -24,13 +24,8 @@ if(!empty($arr_data->username) && !empty($arr_data->email) && !empty($arr_data->
 			
 			if ($row = pg_num_rows($result) == 1)
 			{	
-				//$message = "This Username is already exist ";
-				//echo "<script type='text/javascript'>alert('$message');</script>";
-				
 				// tell the user
 				echo json_encode(array("message" => "This Username is already exist.","success"=>"0"));
-				
-				
 			}
 			else {	
 			// SQL query to fetch information of registerd users and finds user match.
@@ -38,16 +33,11 @@ if(!empty($arr_data->username) && !empty($arr_data->email) && !empty($arr_data->
 			
 			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-			if ($result)
-			{	
-			/* 	echo '<script type="text/javascript">'; 
-				echo 'alert("Registration Successfully");'; 
-				echo 'window.location.href = "https://calldilly.herokuapp.com/";';
-				echo '</script>';	 */
-				
-				// tell the user
-				echo json_encode(array("message" => "Registration Successfully","success"=>"1"));					
-			}
+				if ($result)
+				{	
+					// tell the user
+					echo json_encode(array("message" => "Registration Successfully","success"=>"1"));		
+				}
 			}
 			// Free resultset
 			pg_free_result($result);
@@ -62,6 +52,6 @@ else{
     http_response_code(400);
  
     // tell the user
-    echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
+    echo json_encode(array("message" => "Unable to Process Request. Data is incomplete."));
 }			
 ?>
