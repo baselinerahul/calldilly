@@ -54,6 +54,6 @@ else{
     http_response_code(400);
  
     // tell the user
-    echo json_encode(array("message" => "Unable to Process Request. Data is incomplete."));
+    echo json_encode(array("message" => "Username and Password Incorrect","success"=>"0"));
 }	
 ?>
