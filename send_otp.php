@@ -6,7 +6,7 @@ $from = "+14388342203";
 $to = "+919882756610"; 
 $n = 6; 
 $otp=generateNumericOTP($n);
-$body = "Your otp is:".$otp."";
+$body = "Your otp is: " .$otp."";
 $data = array (
         'From' => $from,
         'To' => $to,
@@ -21,8 +21,12 @@ curl_setopt($x, CURLOPT_USERPWD, "$sid:$token");
 curl_setopt($x, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($x, CURLOPT_POSTFIELDS, $post);
 var_dump($post);
-$y = curl_exec($x);
-var_dump($y);
+$y = json_decode(curl_exec($x));
+echo "<pre>";
+print_r($y );
+echo "</pre>";
+$httpcode = curl_getinfo($x, CURLINFO_HTTP_CODE);
+echo 'HTTP code: ' . $httpcode;
 curl_close($x);
 
 
