@@ -36,7 +36,8 @@ $data = json_decode(file_get_contents("php://input"));
 	if (curl_error($x)) {
 		 echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
 	}else{
-		echo $sql = 'UPDATE  users SET otp='.$otp.' AND status="inactive" AND expire="'.$d.'" WHERE id='.$userid.'';
+		$d=date('Y-m-d h:i:s');
+		echo $sql = 'UPDATE  users SET otp="'.$otp.'" AND status="inactive" AND expire="'.$d.'" WHERE id='.$userid.'';
 			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 				if ($result)
 				{	
