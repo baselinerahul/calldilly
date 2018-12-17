@@ -29,16 +29,7 @@ if(!empty($data->phone)) {
 	$y = json_decode(curl_exec($x));
 	if (curl_error($x)) {
 		echo echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
-	}else{
-		//$sql = 'UPDATE  users SET otp='.$otp.' WHERE id='.$userid.'';
-			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-				if ($result)
-				{	
-					echo json_encode(array("message" => "Otp Sent","success"=>"1"));		
-				}
-				pg_free_result($result);
-				pg_close($connection);
-		}
+	}
 }
 
 function generateNumericOTP($n) { 
