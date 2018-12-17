@@ -2,10 +2,10 @@
 error_reporting(E_ALL);
 include 'config.php';
 $data = json_decode(file_get_contents("php://input"));
-	/* $userid = $data->id;
-	$to = $data->phone; */
-	$userid=1;
-	$to = '+919882756610';
+	$userid = $data->id;
+	$to = $data->phone; 
+	/* $userid=1;
+	$to = '+919882756610'; */
 	$sid='AC877bfda2457808ef1730e26c927e08cd';
 	$token='f172487eed89428a85a80f8799fe122c';
 	$url = "https://api.twilio.com/2010-04-01/Accounts/".$sid."/Messages.json";
