@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 include 'config.php';
 $data = json_decode(file_get_contents("php://input"));
+if(!empty($data->id)){
 	$userid = $data->id;
 	$to = $data->phone; 
 	/* $userid=1;
@@ -48,7 +49,7 @@ $data = json_decode(file_get_contents("php://input"));
 				pg_close($connection);
 		}
 
-
+}
 function generateNumericOTP($n) { 
     $generator = "1357902468";
     $result = "";
