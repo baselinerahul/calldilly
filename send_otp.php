@@ -1,10 +1,9 @@
 <?php
 error_reporting(E_ALL);
 include 'config.php';
-//$data = json_decode(file_get_contents("php://input"));
-
-	//$to = $data->id;
-	//$to = $data->phone;
+$data = json_decode(file_get_contents("php://input"));
+	/* $userid = $data->id;
+	$to = $data->phone; */
 	$userid=1;
 	$to = '+919882756610';
 	$sid='AC877bfda2457808ef1730e26c927e08cd';
@@ -33,8 +32,19 @@ include 'config.php';
 	echo "<pre>";
 	print_r($y);
 	echo "<pre>";
-	echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
 	
+	if (curl_error($x)) {
+		 echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
+	}else{
+		echo $sql = 'UPDATE  users SET otp='.$otp.' AND status="inactive" AND expire="'.$d.'" WHERE id='.$userid.'';
+			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+				if ($result)
+				{	
+					echo json_encode(array("message" => "Otp Sent","success"=>"1"));		
+				}
+				pg_free_result($result);
+				pg_close($connection);
+		}
 
 
 function generateNumericOTP($n) { 
