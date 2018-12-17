@@ -1,11 +1,9 @@
 <?php
-error_reporting(E_ALL);
 include 'config.php';
 $data = json_decode(file_get_contents("php://input"));
-	/* $userid = $data->id;
-	$to = $data->phone; */
-	$userid=1;
-	$to = '+919882756610';
+if(!empty($data->phone)) {
+	$to = $data->phone;
+	$userid=$data->id;
 	$sid='AC877bfda2457808ef1730e26c927e08cd';
 	$token='f172487eed89428a85a80f8799fe122c';
 	$url = "https://api.twilio.com/2010-04-01/Accounts/".$sid."/Messages.json";
@@ -29,15 +27,12 @@ $data = json_decode(file_get_contents("php://input"));
 	curl_setopt($x, CURLOPT_POSTFIELDS, $post);
 	var_dump($post);
 	$y = json_decode(curl_exec($x));
-	echo "<pre>";
-	print_r($y);
-	echo "<pre>";
-	
 	if (curl_error($x)) {
-		 echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
+		echo echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
 	}else{
 		$d=date('Y-m-d h:i:s');
-		echo $sql = 'UPDATE  users SET otp="'.$otp.'" AND status="inactive" AND expire="'.$d.'" WHERE id='.$userid.'';
+		$sql = 'UPDATE users SET "otp"= \''.$otp.'\', "status"= \'inactive\', "expire"= \''.$d.'\' WHERE users."Id" = \''.$userid.'\'';
+		
 			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 				if ($result)
 				{	
@@ -46,6 +41,10 @@ $data = json_decode(file_get_contents("php://input"));
 				pg_free_result($result);
 				pg_close($connection);
 		}
+}
+
+
+
 
 
 function generateNumericOTP($n) { 
