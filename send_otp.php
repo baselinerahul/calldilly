@@ -1,6 +1,7 @@
 <?php
+error_reporting(E_ALL);
 include 'config.php';
-$data = json_decode(file_get_contents("php://input"));
+//$data = json_decode(file_get_contents("php://input"));
 
 	//$to = $data->id;
 	//$to = $data->phone;
