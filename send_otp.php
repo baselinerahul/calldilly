@@ -30,8 +30,10 @@ include 'config.php';
 	curl_setopt($x, CURLOPT_POSTFIELDS, $post);
 	var_dump($post);
 	$y = json_decode(curl_exec($x));
-	
-	echo echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
+	echo "<pre>";
+	print_r($y);
+	echo "<pre>";
+	echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
 	
 
 
