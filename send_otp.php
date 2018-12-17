@@ -29,15 +29,15 @@ $data = json_decode(file_get_contents("php://input"));
 	curl_setopt($x, CURLOPT_POSTFIELDS, $post);
 	var_dump($post);
 	$y = json_decode(curl_exec($x));
-	echo "<pre>";
+	/* echo "<pre>";
 	print_r($y);
-	echo "<pre>";
+	echo "<pre>"; */
 	
 	if (curl_error($x)) {
 		 echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
 	}else{
 		$d=date('Y-m-d h:i:s');
-		echo $sql = 'UPDATE users SET "otp"= \''.$otp.'\', "status"= \'inactive\', "expire"= \''.$d.'\' WHERE users."Id" = \''.$userid.'\'';
+		 $sql = 'UPDATE users SET "otp"= \''.$otp.'\', "status"= \'inactive\', "expire"= \''.$d.'\' WHERE users."Id" = \''.$userid.'\'';
 		
 			$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 				if ($result)
