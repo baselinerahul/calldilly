@@ -27,9 +27,9 @@ if(!empty($data->phone)) {
 	curl_setopt($x, CURLOPT_POSTFIELDS, $post);
 	var_dump($post);
 	$y = json_decode(curl_exec($x));
-	if (curl_error($x)) {
-		echo echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
-	}
+	
+	echo echo json_encode(array("message" => "error in sending otp","success"=>"0"));	
+	
 }
 
 function generateNumericOTP($n) { 
