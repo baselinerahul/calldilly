@@ -22,7 +22,7 @@ $token = new AccessToken(
     3600,
     $identity
 );
-aler
+ 
 // Create Voice grant
 $voiceGrant = new VoiceGrant();
 $voiceGrant->setOutgoingApplicationSid($outgoingApplicationSid);
