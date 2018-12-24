@@ -1,8 +1,8 @@
 <?php
 // Get the PHP helper library from https://twilio.com/docs/libraries/php
-require_once './vendor/autoload.php'; // Loads the library
-//use Twilio\Jwt\AccessToken;
-//use Twilio\Jwt\Grants\VoiceGrant;
+require_once 'vendor/autoload.php'; // Loads the library
+use Twilio\Jwt\AccessToken;
+use Twilio\Jwt\Grants\VoiceGrant;
 
 // Required for all Twilio access tokens
 $twilioAccountSid = 'AC877bfda2457808ef1730e26c927e08cd';
@@ -22,20 +22,18 @@ $token = new AccessToken(
     3600,
     $identity
 );
- 
+
 // Create Voice grant
-//$voiceGrant = new VoiceGrant();
-//$voiceGrant->setOutgoingApplicationSid($outgoingApplicationSid);
+$voiceGrant = new VoiceGrant();
+$voiceGrant->setOutgoingApplicationSid($outgoingApplicationSid);
 
 // Optional: add to allow incoming calls
-//$voiceGrant->setIncomingAllow(true);
+$voiceGrant->setIncomingAllow(true);
 
 // Add grant to token
-//$token->addGrant($voiceGrant);
+$token->addGrant($voiceGrant);
 
 // render token to string
-//echo $token->toJWT();
-echo "<pre>";
-print_r($token);
-echo "</pre>";
+echo $token->toJWT();
+
 ?>
