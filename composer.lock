@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "310ca22aa3ec7613ee36ee419b6986b7",
+    
     "packages": [],
     "packages-dev": [],
     "aliases": [],
@@ -16,4 +17,53 @@
         "php": "~7.2.9"
     },
     "platform-dev": []
+"packages": [
+        {
+            "name": "twilio/sdk",
+            "version": "5.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "debe730c59914961e04a653567af22ed31d6588e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/debe730c59914961e04a653567af22ed31d6588e",
+                "reference": "debe730c59914961e04a653567af22ed31d6588e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2018-12-17T05:40:42+00:00"
+        }
+    ],
 }
+
