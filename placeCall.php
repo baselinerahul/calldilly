@@ -6,7 +6,7 @@ include('./vendor/autoload.php');
 include('./config.php');
 
 $identity = 'alice';
-$callerNumber = '1234567890';
+$callerNumber = '14388342203';
 $callerId = 'client:quick_start';
 $to = isset($_GET["to"]) ? $_GET["to"] : "";
 if (!isset($to) || empty($to)) {
@@ -22,7 +22,7 @@ if (!isset($to) || empty($to)) {
     'client:alice', // Call this number
     $callerId,      // From a valid Twilio number
     array(
-      'url' => 'https://'.$_SERVER['HTTP_HOST'].'/incoming.php'
+      'url' => 'https://calldilly.herokuapp.com/incoming.php'
     )
   );
 } else if (is_numeric($to)) {
@@ -30,7 +30,7 @@ if (!isset($to) || empty($to)) {
     $to,           // Call this number
     $callerNumber, // From a valid Twilio number
     array(
-      'url' => 'https://'.$_SERVER['HTTP_HOST'].'/incoming.php'
+      'url' => 'https://calldilly.herokuapp.com/incoming.php'
     )
   );
 } else {
@@ -38,7 +38,7 @@ if (!isset($to) || empty($to)) {
     'client:'.$to, // Call this number
     $callerId,     // From a valid Twilio number
     array(
-      'url' => 'https://'.$_SERVER['HTTP_HOST'].'/incoming.php'
+      'url' => 'https://calldilly.herokuapp.com/incoming.php'
     )
   );
 }
