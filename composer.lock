@@ -6,18 +6,7 @@
     ],
     "content-hash": "310ca22aa3ec7613ee36ee419b6986b7",
     
-    "packages": [],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": {
-        "php": "~7.2.9"
-    },
-    "platform-dev": []
-"packages": [
+    "packages": [
         {
             "name": "twilio/sdk",
             "version": "5.27.0",
@@ -65,5 +54,16 @@
             "time": "2018-12-17T05:40:42+00:00"
         }
     ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "~7.2.9"
+    },
+    "platform-dev": []
+
 }
 
