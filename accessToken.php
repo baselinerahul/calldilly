@@ -8,7 +8,8 @@ use Twilio\Jwt\Grants\VoiceGrant;
 $twilioAccountSid = 'AC877bfda2457808ef1730e26c927e08cd';
 $twilioApiKey = 'SK04a9d7849410958a262310ad12df2964';
 $twilioApiSecret = 'kRmbWcPOAsWYe54p07Cj6XtlLYsiIQxq';
-
+ 
+$PUSH_CREDENTIAL_SID = 'CRe1791a6c31e7e7036ff849b3c561b699';
 // Required for Voice grant
 $outgoingApplicationSid = 'AP4b094f2ff0e05347303b34e69e8bcac0';
  
