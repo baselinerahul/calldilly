@@ -12,7 +12,10 @@ $to = isset($_GET["to"]) ? $_GET["to"] : "";
 if (!isset($to) || empty($to)) {
   $to = isset($POST["to"]) ? $_POST["to"] : "";
 }
-
+$ACCOUNT_SID = 'AC877bfda2457808ef1730e26c927e08cd';
+$API_KEY = 'SKd06e37ab01f0c855ffa85ab6d0cccbc7';
+$API_KEY_SECRET = '3XwEC81PIpBtRkvpdTKusgWlSTfkofd4';
+//$PUSH_CREDENTIAL_SID = 'CRe1791a6c31e7e7036ff849b3c561b699';
 
 $client = new Twilio\Rest\Client($API_KEY, $API_KEY_SECRET, $ACCOUNT_SID);
 
