@@ -25,3 +25,4 @@ $grant->setOutgoingApplicationSid($APP_SID);
 $grant->setPushCredentialSid($PUSH_CREDENTIAL_SID);
 $token->addGrant($grant);
 echo $token->toJWT();
+?>
