@@ -1,4 +1,4 @@
-    <?php
+<?php
 /*
  * Creates an endpoint that can be used in your TwiML App as the Voice Request Url.
  *
@@ -8,18 +8,15 @@
  */
 include('./vendor/autoload.php');
 include('./config.php');
-
-$callerId = '+19786205652';
+$callerId = 'client:quick_start';
 $to = isset($_POST["to"]) ? $_POST["to"] : "";
 if (!isset($to) || empty($to)) {
   $to = isset($_GET["to"]) ? $_GET["to"] : "";
 }
-
 /*
  * Use a valid Twilio number by adding to your account via https://www.twilio.com/console/phone-numbers/verified
  */
-$callerNumber = '+19786205652';
-
+$callerNumber = '1234567890';
 $response = new Twilio\Twiml();
 if (!isset($to) || empty($to)) {
   $response->say('Congratulations! You have just made your first call! Good bye.');
@@ -36,5 +33,4 @@ if (!isset($to) || empty($to)) {
     ));
   $dial->client($to);
 }
-
 print $response;
