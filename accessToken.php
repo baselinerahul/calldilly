@@ -5,14 +5,16 @@ use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\VoiceGrant;
 
 // Required for all Twilio access tokens
-$twilioAccountSid = 'AC877bfda2457808ef1730e26c927e08cd';
-$twilioApiKey = 'SK04a9d7849410958a262310ad12df2964';
-$twilioApiSecret = 'kRmbWcPOAsWYe54p07Cj6XtlLYsiIQxq';
+$twilioAccountSid = 'AC8ab3c778835e6fca5bc5586277c422ea';
+$twilioApiKey = 'SK865aec8203fe410a525b0c0e79e4129b';
+$twilioApiSecret = 'QyicHIKRlURn3KuIk17oirU3wI7XxW3Q';
  
-$PUSH_CREDENTIAL_SID = 'CRe1791a6c31e7e7036ff849b3c561b699';
+$PUSH_CREDENTIAL_SID = 'CRd3f184432e9f7a72b01f4bfad55502d6';
 // Required for Voice grant
-$outgoingApplicationSid = 'AP4b094f2ff0e05347303b34e69e8bcac0';
+$outgoingApplicationSid = 'APbef1c183bb8a4d31ad53127da7b480ab';
  
+ 
+
 // An identifier for your app - can be anything you'd like
 $identity = "john_doe";
 
