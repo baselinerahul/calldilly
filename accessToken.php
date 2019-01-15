@@ -2,6 +2,7 @@
 /*
  * Creates an access token with VoiceGrant using your Twilio credentials.
  */
+require_once 'vendor/autoload.php';
 include('./vendor/autoload.php');
 include('./config.php');
 use Twilio\Jwt\AccessToken;
