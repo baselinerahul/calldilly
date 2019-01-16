@@ -9,13 +9,14 @@ include('./config.php');
 use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\VoiceGrant;
 // Required for all Twilio access tokens
-$twilioAccountSid = 'AC8ab3c778835e6fca5bc5586277c422ea';
-$twilioApiKey = 'SK865aec8203fe410a525b0c0e79e4129b';
-$twilioApiSecret = 'QyicHIKRlURn3KuIk17oirU3wI7XxW3Q';
+$twilioAccountSid = 'AC3d1de74dcd2cf7937d48a2f7b3b8ddf5';
+$twilioApiKey = 'SK889d08e08efb39528cbb64acbcac16d7';
+$twilioApiSecret = '7EVi02Y77YUD3jbqLHZuaddczBFYvHcc';
  
-$PUSH_CREDENTIAL_SID = 'CRd3f184432e9f7a72b01f4bfad55502d6';
+$PUSH_CREDENTIAL_SID = 'CR421c2cb346639257cc36ee7fb6def11d';
 // Required for Voice grant
-$outgoingApplicationSid = 'APbef1c183bb8a4d31ad53127da7b480ab';
+$outgoingApplicationSid = 'APde30372c6aca4f75b4243876d6a0b9dd';
+ 
  
  
 // An identifier for your app - can be anything you'd like
@@ -32,12 +33,7 @@ $token = new AccessToken(
     $twilioApiSecret,
     3600,
     $identity
-$token = new AccessToken($ACCOUNT_SID, 
-                         $API_KEY, 
-                         $API_KEY_SECRET, 
-                         3600, 
-                         $identity
-);
+
 // Create Voice grant
 $voiceGrant = new VoiceGrant();
 $voiceGrant->setOutgoingApplicationSid($outgoingApplicationSid);
