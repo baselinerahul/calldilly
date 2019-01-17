@@ -9,14 +9,18 @@ include('./config.php');
 use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\VoiceGrant;
 // Required for all Twilio access tokens
-$twilioAccountSid = 'AC8ab3c778835e6fca5bc5586277c422ea';
-$twilioApiKey = 'SK865aec8203fe410a525b0c0e79e4129b';
-$twilioApiSecret = 'QyicHIKRlURn3KuIk17oirU3wI7XxW3Q';
+$twilioAccountSid = 'AC877bfda2457808ef1730e26c927e08cd';
+$twilioApiKey = 'SK6477ccec45c09d9f476dcc2b92b49c0e';
+$twilioApiSecret = '9KU9HRPJ3b6RXXbBXkLOt29ghVPkCUhn';
  
-$PUSH_CREDENTIAL_SID = 'CRd3f184432e9f7a72b01f4bfad55502d6';
+$PUSH_CREDENTIAL_SID = 'CRc62674116d636c79a4e14f5858c0158e';
 // Required for Voice grant
-$outgoingApplicationSid = 'APbef1c183bb8a4d31ad53127da7b480ab';
- 
+$outgoingApplicationSid = 'AP4b094f2ff0e05347303b34e69e8bcac0';
+// $ACCOUNT_SID = 'AC877bfda2457808ef1730e26c927e08cd'; 
+//$API_KEY = 'SK6477ccec45c09d9f476dcc2b92b49c0e';
+//$API_KEY_SECRET = '9KU9HRPJ3b6RXXbBXkLOt29ghVPkCUhn';
+//$PUSH_CREDENTIAL_SID = 'CRc62674116d636c79a4e14f5858c0158e';
+//$APP_SID = 'AP4b094f2ff0e05347303b34e69e8bcac0';
  
 // An identifier for your app - can be anything you'd like
 $identity = "john_doe";
