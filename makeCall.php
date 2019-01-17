@@ -19,19 +19,22 @@ if (!isset($to) || empty($to)) {
 $callerNumber = '+919882756610';
 $response = new Twilio\Twiml();
 if (!isset($to) || empty($to)) {
-  $response->say('Congratulations! You have just made your first call! Good bye.');
+ // $response->say('Congratulations! You have just made your first call! Good bye.');
+   "url" => "http://demo.twilio.com/docs/voice.xml"
 } else if (is_numeric($to)) {
   $dial = $response->dial(
     array(
-  	  'callerId' => $callerNumber
+       "url" => "http://demo.twilio.com/docs/voice.xml"
+  //	  'callerId' => $callerNumber
   	));
   $dial->number($to);
 } else {
   $dial = $response->dial(
     array(
-       'callerId' => $callerId
+       "url" => "http://demo.twilio.com/docs/voice.xml"
+      // 'callerId' => $callerId
     ));
   $dial->client($to);
 }
 print $response;
-?>
+ 
