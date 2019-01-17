@@ -13,6 +13,8 @@ $identity = isset($_GET["identity"]) ? $_GET["identity"] : NULL;
 if (!isset($identity) || empty($identity)) {
   $identity = isset($_POST["identity"]) ? $_POST["identity"] : "alice";
 }
+print_r($PUSH_CREDENTIAL_SID);
+exit();
 // Create access token, which we will serialize and send to the client
 $token = new AccessToken($ACCOUNT_SID, 
                          $API_KEY, 
@@ -26,5 +28,6 @@ $grant->setOutgoingApplicationSid($APP_SID);
 $grant->setPushCredentialSid($PUSH_CREDENTIAL_SID);
 $grant->setIncomingAllow(true);
 $token->addGrant($grant);
+print_r($token);
 echo $token->toJWT();
 ?>
