@@ -34,4 +34,3 @@ if (!isset($to) || empty($to)) {
   $dial->client($to);
 }
 print $response;
- 
