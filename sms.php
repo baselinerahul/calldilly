@@ -1,7 +1,7 @@
 <?php
 $data = json_decode(file_get_contents("php://input"));
-print_r($data);
-/* if(!empty($data)){
+//print_r($data);
+if(!empty($data)){
 	
 	$to = $data->to; 
 	$body = $data->body; 
@@ -24,9 +24,9 @@ print_r($data);
 	curl_setopt($x, CURLOPT_USERPWD, "$sid:$token");
 	curl_setopt($x, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 	curl_setopt($x, CURLOPT_POSTFIELDS, $post);
-	var_dump($post);
-	echo $y = json_decode(curl_exec($x));
+	$y = curl_exec($x);
+	print_r($y);
 }else{
  echo $y = json_decode('error');
-} */
+}
 ?>
