@@ -1,6 +1,6 @@
 <?php
 // Get the PHP helper library from twilio.com/docs/php/install
-require_once '/path/to/vendor/autoload.php'; // Loads the library
+require_once './vendor/autoload.php'; // Loads the library
 use Twilio\Rest\Client;
 // Your Account Sid and Auth Token from twilio.com/user/account
 $sid = "AC877bfda2457808ef1730e26c927e08cd";
