@@ -1,6 +1,7 @@
 <?php
 $data = json_decode(file_get_contents("php://input"));
-if(!empty($data)){
+print_r($data);
+/* if(!empty($data)){
 	
 	$to = $data->to; 
 	$body = $data->body; 
@@ -27,5 +28,5 @@ if(!empty($data)){
 	echo $y = json_decode(curl_exec($x));
 }else{
  echo $y = json_decode('error');
-}
+} */
 ?>
