@@ -7,21 +7,13 @@ $data = json_decode(file_get_contents("php://input"));
 $results = array();
 require 'vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
-  echo "<pre>";
-       print_r($data);
-        echo "</pre>";
-        exit();
 if(isset($data['method'])){
      echo $method = $data['method'];
     if($method =="charge"){
-        $amount = $_POST['amount'];
-        $currency = $_POST['currency'];
-        $source = $_POST['source'];
-        $description = $_POST['description'];
-        echo "<pre>";
-       print_r($_POST);
-        echo "</pre>";
-        exit();
+        $amount = $data['amount'];
+        $currency = $data['currency'];
+        $source = $data['source'];
+        $description = $data['description'];
         try {
             $charge = \Stripe\Charge::create(array(
                 "amount" => $amount, // Amount in cents
