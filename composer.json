@@ -17,6 +17,6 @@
     "require": {
         "php": "~7.2.9",
          "twilio/sdk": "^5.27",
-          "ext-mbstring": "*"
+          "ext-mbstring": "1.2.9"
     }
 }
