@@ -4,18 +4,14 @@
  */
 include('./vendor/autoload.php');
 include('./config.php');
-
 $identity = 'alice';
-$callerNumber = '14388342203';
+$callerNumber = '+14388342203';
 $callerId = 'client:quick_start';
 $to = isset($_GET["to"]) ? $_GET["to"] : "";
 if (!isset($to) || empty($to)) {
   $to = isset($POST["to"]) ? $_POST["to"] : "";
 }
-
-
 $client = new Twilio\Rest\Client($API_KEY, $API_KEY_SECRET, $ACCOUNT_SID);
-
 $call = NULL;
 if (!isset($to) || empty($to)) {
   $call = $client->calls->create(
@@ -42,5 +38,4 @@ if (!isset($to) || empty($to)) {
     )
   );
 }
-
 print $call.sid;

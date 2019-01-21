@@ -8,33 +8,30 @@
  */
 include('./vendor/autoload.php');
 include('./config.php');
-
 $callerId = 'client:quick_start';
 $to = isset($_POST["to"]) ? $_POST["to"] : "";
 if (!isset($to) || empty($to)) {
   $to = isset($_GET["to"]) ? $_GET["to"] : "";
 }
-
 /*
  * Use a valid Twilio number by adding to your account via https://www.twilio.com/console/phone-numbers/verified
  */
-$callerNumber = '14388342203';
-
+$callerNumber = '+17067057493';
 $response = new Twilio\Twiml();
 if (!isset($to) || empty($to)) {
-  $response->say('Congratulations! You have just made your first call! Good bye.');
+   //"url" => "http://demo.twilio.com/docs/voice.xml"
+ $response->say("Congratulations! You have just made your first call! Good bye.");
 } else if (is_numeric($to)) {
   $dial = $response->dial(
-    array(
-  	  'callerId' => $callerNumber
+    array(   
+ 	  'callerId' => $callerNumber
   	));
   $dial->number($to);
 } else {
   $dial = $response->dial(
     array(
-       'callerId' => $callerId
+    'callerId' => $callerId
     ));
   $dial->client($to);
 }
-
 print $response;

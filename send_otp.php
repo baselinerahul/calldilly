@@ -10,7 +10,7 @@ if(!empty($data->id)){
 	$token='f172487eed89428a85a80f8799fe122c';
 	$url = "https://api.twilio.com/2010-04-01/Accounts/".$sid."/Messages.json";
 	$from = "+14388342203";
-	//$to = "+919882756610"; 
+	//$to = "+to"; 
 	$n = 6; 
 	$otp=generateNumericOTP($n);
 	$body = "Your otp is: " .$otp."";
