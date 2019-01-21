@@ -12,6 +12,9 @@ if(isset($_POST['method'])){
         $currency = $_POST['currency'];
         $source = $_POST['source'];
         $description = $_POST['description'];
+        echo "<pre>";
+       print_r($_POST);
+        echo "</pre>";
         try {
             $charge = \Stripe\Charge::create(array(
                 "amount" => $amount, // Amount in cents
