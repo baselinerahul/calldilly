@@ -4,25 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "310ca22aa3ec7613ee36ee419b6986b7",
-    
+    "content-hash": "c2c2670fd565ef81d1b52478781b3770",
     "packages": [
         {
             "name": "twilio/sdk",
-            "version": "5.27.0",
+            "version": "5.27.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twilio/twilio-php.git",
-                "reference": "debe730c59914961e04a653567af22ed31d6588e"
+                "reference": "3acdaa0f542ff3e9ad988dab85c1f0f9e7621375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/debe730c59914961e04a653567af22ed31d6588e",
-                "reference": "debe730c59914961e04a653567af22ed31d6588e",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/3acdaa0f542ff3e9ad988dab85c1f0f9e7621375",
+                "reference": "3acdaa0f542ff3e9ad988dab85c1f0f9e7621375",
                 "shasum": ""
             },
             "require": {
-                "php": "~7.2.9"
+                "php": ">=5.5.0"
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
@@ -51,7 +50,7 @@
                 "sms",
                 "twilio"
             ],
-            "time": "2018-12-17T05:40:42+00:00"
+            "time": "2019-01-02T17:00:14+00:00"
         }
     ],
     "packages-dev": [],
@@ -61,9 +60,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~7.2.9"
+        "php": "~7.3.0",
+        "ext-mbstring": "*"
     },
     "platform-dev": []
-
 }
-
