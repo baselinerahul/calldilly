@@ -3,15 +3,16 @@ require_once('./vendor/stripe/init.php');
 define('STRIPE_SECRET_KEY','[sk_test_zUpltxJ97dKU7CEVARagjE8U]');
 define('STRIPE_PUBLIC_KEY','[pk_test_cJhtOjA46tUKvSQIOPxsybmO]');
 header('Content-Type: application/json');
+$data = json_decode(file_get_contents("php://input"));
 $results = array();
 require 'vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
   echo "<pre>";
-       print_r($_POST);
+       print_r($data);
         echo "</pre>";
         exit();
-if(isset($_POST['method'])){
-     echo $method = $_POST['method'];
+if(isset($data['method'])){
+     echo $method = $data['method'];
     if($method =="charge"){
         $amount = $_POST['amount'];
         $currency = $_POST['currency'];
