@@ -10,9 +10,9 @@ $data = json_decode(file_get_contents("php://input"));
 $results = array();
 require './vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
-$data = "method";
+$data = "charge";
 if(isset($data)){
-      $method = $data['method'];
+      $method = "charge";
     if($method =="charge"){
       echo  $amount = $data['amount'];
         $currency = $data['currency'];
