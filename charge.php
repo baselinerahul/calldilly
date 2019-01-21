@@ -18,6 +18,7 @@ if(isset($charge)){
         $currency = "usd";
         $source = "tok_1DuxssDjgSbSi597RlFPQnD6";
         $description = "test";
+          exit();
         try {
             $charge = \Stripe\Charge::create(array(
                 "amount" => $amount, // Amount in cents
