@@ -2,13 +2,13 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once('./vendorf/stripe/init.php');
+require_once('./vendor/stripe/init.php');
 define('STRIPE_SECRET_KEY','[sk_test_zUpltxJ97dKU7CEVARagjE8U]');
 define('STRIPE_PUBLIC_KEY','[pk_test_cJhtOjA46tUKvSQIOPxsybmO]');
 header('Content-Type: application/json');
 $data = json_decode(file_get_contents("php://input"));
 $results = array();
-require 'vendor/autoload.php';
+require './vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
 if(isset($data['method'])){
       $method = $data['method'];
