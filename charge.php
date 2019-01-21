@@ -1,5 +1,5 @@
 <?php
-require_once('./vander/stripe/init.php');
+require_once('./vendor/stripe/init.php');
 define('STRIPE_SECRET_KEY','[sk_test_zUpltxJ97dKU7CEVARagjE8U]');
 define('STRIPE_PUBLIC_KEY','[pk_test_cJhtOjA46tUKvSQIOPxsybmO]');
 header('Content-Type: application/json');
