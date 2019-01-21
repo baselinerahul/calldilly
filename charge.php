@@ -1,4 +1,7 @@
 <?php
+
+echo "hello";
+die();
 define('STRIPE_SECRET_KEY','[sk_test_zUpltxJ97dKU7CEVARagjE8U]');
 define('STRIPE_PUBLIC_KEY','[pk_test_cJhtOjA46tUKvSQIOPxsybmO]');
 header('Content-Type: application/json');
