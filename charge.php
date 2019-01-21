@@ -14,7 +14,7 @@ $charge = "charge";
 if(isset($charge)){
       $method = $charge;
     if($method =="charge"){
-      echo  $amount = 100;
+        $amount = 100;
         $currency = "usd";
         $source = "tok_1DuxssDjgSbSi597RlFPQnD6";
         $description = "test";
