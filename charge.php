@@ -5,6 +5,7 @@ header('Content-Type: application/json');
 $results = array();
 require 'vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
+exit();
 if(isset($_POST['method'])){
     $method = $_POST['method'];
     if($method =="charge"){
