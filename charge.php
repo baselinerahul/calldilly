@@ -14,10 +14,10 @@ $charge = "charge";
 if(isset($charge)){
       $method = $charge;
     if($method =="charge"){
-        $amount = $data["amount"];
-        $currency = $data["currency"];
-        $source = $data["source"];
-        $description = $data["description"];
+        $amount = $data->amount;
+        $currency =  $data->currency;
+        $source =  $data->source;
+        $description =  $data->description;
         try {
             $charge = \Stripe\Charge::create(array(
                 "amount" => $amount, // Amount in cents
