@@ -7,7 +7,7 @@ $results = array();
 require 'vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
 if(isset($_POST['method'])){
-    $method = $_POST['method'];
+     echo $method = $_POST['method'];
     if($method =="charge"){
         $amount = $_POST['amount'];
         $currency = $_POST['currency'];
