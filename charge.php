@@ -8,9 +8,9 @@ $results = array();
 require 'vendor/autoload.php';
 \Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
 if(isset($data['method'])){
-     echo $method = $data['method'];
+      $method = $data['method'];
     if($method =="charge"){
-        $amount = $data['amount'];
+      echo  $amount = $data['amount'];
         $currency = $data['currency'];
         $source = $data['source'];
         $description = $data['description'];
