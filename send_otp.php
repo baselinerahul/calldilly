@@ -6,8 +6,8 @@ if(!empty($data->id)){
 	$userid = $data->id;
 	$to = $data->phone; 
 	/* $userid=1;
-	$sid='AC877bfda2457808ef1730e26c927e08cd';
-	$token='f172487eed89428a85a80f8799fe122c';
+	$sid=' ';
+	$token=' ';
 	$url = "https://api.twilio.com/2010-04-01/Accounts/".$sid."/Messages.json";
 	$from = "+14388342203";
 	//$to = "+to"; 
